@@ -1,0 +1,28 @@
+{
+  "name": "solana-ai-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rexsaurus/solana-AI-APIs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rexsaurus/solana-AI-APIs/issues"
+  },
+  "homepage": "https://github.com/rexsaurus/solana-AI-APIs#readme",
+  "description": "",
+  "dependencies": {
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/web3.js": "^1.98.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^6.0.5"
+  }
+}
