@@ -65,9 +65,13 @@ const extractMemo = (instructions) => {
   
       const memoProgramId = "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"; // Memo program ID
       for (const instruction of instructions) {
-        if (instruction.programId?.toBase58() === memoProgramId) {
-          // The memo data is stored in `instruction.data`
-          const memoData = instruction.data ? Buffer.from(instruction.data).toString("utf8") : null;
+        // Match the instruction's program ID with the Memo program
+        if (instruction.programId.toBase58() === memoProgramId) {
+          // Decode the memo data from the instruction's data field
+          const memoData = instruction.data.length
+            ? Buffer.from(instruction.data).toString("utf8")
+            : null;
+  
           console.log("Found memo instruction:", memoData); // Debug log
           return memoData;
         }
@@ -77,6 +81,7 @@ const extractMemo = (instructions) => {
     }
     return null;
   };
+  
   
 
 const createTestTransaction = async (recipientPublicKey) => {
